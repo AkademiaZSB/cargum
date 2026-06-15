@@ -73,7 +73,7 @@
   --accent:#ff7a00;    /* pomarańcz z logo */
   --accent-2:#ff9a3c;
   --accent-dark:#e06600;
-  --ok:#22c55e;
+  --ok:#2ecc71;
   --radius:14px;
   --maxw:1100px;
   --shadow:0 10px 30px rgba(0,0,0,.5);
@@ -99,7 +99,7 @@
 
  /* ---- Przyciski ---- */
  .btn{display:inline-flex;align-items:center;gap:10px;font-weight:800;padding:14px 24px;border-radius:999px;
-  font-size:1.05rem;transition:.15s;border:2px solid transparent;cursor:pointer;text-transform:uppercase;letter-spacing:.02em}
+  font-size:1.05rem;transition:.15s;border:2px solid transparent;cursor:pointer;text-transform:uppercase;letter-spacing:.02em;white-space:nowrap}
  .btn svg{width:20px;height:20px}
  .btn-call{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#111}
  .btn-call:hover{filter:brightness(1.08);transform:translateY(-1px)}
@@ -129,7 +129,7 @@
  .menu-panel{position:absolute;top:calc(100% + 16px);right:0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px;min-width:230px;box-shadow:var(--shadow);display:flex;flex-direction:column;z-index:60}
  .menu-panel a{padding:11px 14px;border-radius:8px;font-weight:600;font-size:.95rem;white-space:nowrap;color:var(--ink)}
  .menu-panel a:hover{background:rgba(255,122,0,.14);color:var(--accent)}
- @media(max-width:900px){ .top nav .link{display:none} .brand span.txt{display:none} }
+ @media(max-width:900px){ .top nav .link{display:none} .brand span.txt{display:none} .top .btn-call{display:none} .top-in{gap:12px} }
 
  /* ---- Hero ---- */
  .hero{position:relative;overflow:hidden;padding:64px 0 60px;
@@ -259,7 +259,7 @@
  /* ---- Mobilny pasek „Zadzwoń” ---- */
  .callbar{position:fixed;bottom:0;left:0;right:0;z-index:60;display:none;
   background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 -4px 16px rgba(0,0,0,.4)}
- .callbar a{display:flex;align-items:center;justify-content:center;gap:10px;color:#111;font-weight:900;padding:16px;font-size:1.1rem;text-transform:uppercase}
+ .callbar a{display:flex;align-items:center;justify-content:center;gap:10px;color:#111;font-weight:900;padding:16px;font-size:1.1rem;text-transform:uppercase;white-space:nowrap}
  .callbar svg{width:22px;height:22px}
  @media(max-width:900px){ .callbar{display:block} }
 </style>
