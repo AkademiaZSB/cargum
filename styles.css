@@ -1,0 +1,153 @@
+/* =========================================================================
+   PROFI AUTO SERWIS CARGUM — wspólne style (wersja wielopodstronowa)
+   Motyw: czerń + pomarańcz + biel (pod logo). Mobile-first.
+   Logo: wrzuć plik cargum-logo.png do tego folderu.
+   ========================================================================= */
+:root{
+  --bg:#0a0a0c; --bg-soft:#121216; --card:#16161b; --line:#2a2a31;
+  --ink:#f4f4f5; --muted:#a1a1aa; --accent:#ff7a00; --accent-2:#ff9a3c;
+  --accent-dark:#e06600; --ok:#22c55e; --radius:14px; --maxw:1100px;
+  --shadow:0 10px 30px rgba(0,0,0,.5);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.12;letter-spacing:-.02em}
+h1{font-size:clamp(1.9rem,5.5vw,3rem);font-weight:900;text-transform:uppercase;font-style:italic}
+h2{font-size:clamp(1.6rem,4.5vw,2.3rem);margin-bottom:10px;font-weight:900;text-transform:uppercase;font-style:italic}
+.lead{color:var(--muted);font-size:1.05rem}
+section{padding:60px 0}
+.section-soft{background:var(--bg-soft)}
+.center{text-align:center}
+.eyebrow{color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:.8rem;margin-bottom:10px}
+
+/* Przyciski */
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:800;padding:14px 24px;border-radius:999px;
+  font-size:1.05rem;transition:.15s;border:2px solid transparent;cursor:pointer;text-transform:uppercase;letter-spacing:.02em}
+.btn svg{width:20px;height:20px}
+.btn-call{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#111}
+.btn-call:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn-ghost{background:transparent;color:var(--ink);border-color:#3a3a44}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+.btn-dark{background:#fff;color:#111}
+.btn-dark:hover{filter:brightness(.92)}
+
+/* Górny pasek */
+header.top{position:sticky;top:0;z-index:50;background:rgba(10,10,12,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top-in{display:flex;align-items:center;justify-content:space-between;height:70px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:1rem;text-transform:uppercase}
+.brand img{height:52px;width:auto}
+.brand .fallback{color:var(--accent)}
+.top nav{display:flex;align-items:center;gap:20px}
+.top nav a.link{color:var(--ink);font-weight:700;font-size:.95rem;text-transform:uppercase;letter-spacing:.02em}
+.top nav a.link:hover,.top nav a.link.active{color:var(--accent)}
+/* Rozwijane menu "Usługi" (strzałka) — wszystkie usługi dostępne (SEO), bez zaśmiecania paska */
+.menu{position:relative}
+.menu>summary{list-style:none;cursor:pointer;color:var(--ink);font-weight:700;font-size:.95rem;text-transform:uppercase;letter-spacing:.02em;display:inline-flex;align-items:center;gap:6px}
+.menu>summary::-webkit-details-marker{display:none}
+.menu>summary::after{content:"▾";color:var(--accent);font-size:.85em;transition:transform .15s}
+.menu[open]>summary::after{transform:rotate(180deg)}
+.menu>summary:hover,.menu[open]>summary,.menu>summary.active{color:var(--accent)}
+.menu-panel{position:absolute;top:calc(100% + 16px);right:0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px;min-width:240px;box-shadow:var(--shadow);display:flex;flex-direction:column;z-index:60}
+.menu-panel a{padding:11px 14px;border-radius:8px;font-weight:600;font-size:.95rem;white-space:nowrap;color:var(--ink)}
+.menu-panel a:hover{background:rgba(255,122,0,.14);color:var(--accent)}
+/* Mobile: chowamy zdublowany telefon (jest dolny pasek "Zadzwoń"), zostawiamy
+   widoczne O nas + Kontakt i menu Usługi; lżejszy logotyp i mniejsze odstępy. */
+@media(max-width:980px){
+  .top .btn-call{display:none}
+  .brand span.txt{display:none}
+  .brand img{height:40px}
+  .top nav{gap:16px}
+  .menu-panel{min-width:200px}
+}
+@media(max-width:420px){
+  .top nav{gap:12px}
+  .top nav a.link, .menu>summary{font-size:.82rem}
+}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;padding:40px 0 50px;
+  background:radial-gradient(900px 400px at 70% -10%, rgba(255,122,0,.22), transparent 60%), #0a0a0c}
+.hero .logo-big{max-height:110px;margin:0 auto 12px;width:auto;mix-blend-mode:lighten}
+.hero h1 .hl{color:var(--accent)}
+.hero p.sub{color:#d4d4d8;font-size:1.15rem;margin:16px auto 24px;max-width:640px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.hero.small{padding:46px 0}
+.crumbs{color:var(--muted);font-size:.85rem;margin-bottom:14px}
+.crumbs a:hover{color:var(--accent)}
+
+/* Siatki / karty */
+.grid{display:grid;gap:18px}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:860px){.grid-3{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.grid-3,.grid-2{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px;transition:.15s;display:block}
+.card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.card .ico{width:48px;height:48px;border-radius:12px;background:rgba(255,122,0,.14);color:var(--accent);display:grid;place-items:center;margin-bottom:14px}
+.card .ico svg{width:24px;height:24px}
+.card h3{font-size:1.15rem;margin-bottom:4px}
+.card .prob{color:var(--accent);font-weight:800;font-size:.85rem;margin-bottom:6px}
+.card p{color:var(--muted);font-size:.95rem}
+.card .more{color:var(--accent);font-weight:800;font-size:.9rem;margin-top:10px;display:inline-block}
+.badge-spec{display:inline-block;background:var(--accent);color:#111;font-weight:800;font-size:.68rem;text-transform:uppercase;letter-spacing:.04em;padding:3px 8px;border-radius:6px;margin-left:8px;vertical-align:middle}
+
+/* Listy korzyści */
+.ticks{list-style:none;display:grid;gap:12px;margin-top:8px}
+.ticks li{display:flex;gap:12px;align-items:flex-start;color:#d4d4d8}
+.ticks li svg{width:22px;height:22px;color:var(--ok);flex:none;margin-top:2px}
+
+/* Kroki */
+.steps{counter-reset:step;display:grid;gap:18px;grid-template-columns:repeat(4,1fr)}
+@media(max-width:860px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.steps{grid-template-columns:1fr}}
+.step{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 20px 20px}
+.step::before{counter-increment:step;content:counter(step);position:absolute;top:-16px;left:20px;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#111;display:grid;place-items:center;font-weight:900}
+.step h3{font-size:1.05rem;margin:8px 0 4px}.step p{color:var(--muted);font-size:.92rem}
+
+/* Opinie */
+.review{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.stars{color:var(--accent);font-size:1.1rem;letter-spacing:2px}
+.review p{margin:10px 0;font-style:italic;color:#e4e4e7}.review .who{font-weight:800}
+
+/* FAQ */
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:0 20px;margin-bottom:12px}
+.faq summary{list-style:none;cursor:pointer;padding:18px 0;font-weight:800;display:flex;justify-content:space-between;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:1.5rem;color:var(--accent)}
+.faq details[open] summary::after{content:"–"}
+.faq details p{padding:0 0 18px;color:var(--muted)}
+
+/* Kontakt */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+@media(max-width:760px){.contact{grid-template-columns:1fr}}
+.info-line{display:flex;gap:12px;align-items:flex-start;margin-bottom:16px}
+.info-line svg{width:22px;height:22px;color:var(--accent);flex:none;margin-top:2px}
+.info-line b{display:block}.info-line span,.info-line a.sub{color:var(--muted)}
+form .field{margin-bottom:14px}
+form label{display:block;font-weight:700;font-size:.9rem;margin-bottom:6px}
+form input,form textarea{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:11px;font:inherit;background:#0e0e11;color:var(--ink)}
+form input::placeholder,form textarea::placeholder{color:#6b7280}
+form input:focus,form textarea:focus{outline:2px solid var(--accent);border-color:transparent}
+.map{width:100%;height:300px;border:0;border-radius:var(--radius);margin-top:18px;filter:grayscale(.2)}
+.note{color:var(--muted);font-size:.9rem;margin-top:14px}
+
+/* CTA pas */
+.cta-band{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#111;text-align:center;padding:44px 0}
+.cta-band h2{color:#111}
+.cta-band .btn-dark{background:#111;color:#fff}
+
+/* Stopka */
+footer{background:#070708;color:#a1a1aa;padding:40px 0 110px;font-size:.92rem;border-top:1px solid var(--line)}
+footer .cols{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between}
+footer a:hover{color:var(--accent)}footer h4{color:#fff;margin-bottom:10px}
+
+/* Mobilny pasek Zadzwoń */
+.callbar{position:fixed;bottom:0;left:0;right:0;z-index:60;display:none;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 -4px 16px rgba(0,0,0,.4)}
+.callbar a{display:flex;align-items:center;justify-content:center;gap:10px;color:#111;font-weight:900;padding:16px;font-size:1.1rem;text-transform:uppercase}
+.callbar svg{width:22px;height:22px}
+@media(max-width:980px){.callbar{display:block}}

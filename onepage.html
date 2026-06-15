@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<!--
+ ============================================================================
+ PROFI AUTO SERWIS CARGUM - Jelenia Góra | WERSJA ONE-PAGE (jeden plik)
+ ============================================================================
+ WAŻNE - LOGO:
+  Zapisz załączone logo obok tego pliku jako: cargum-logo.png
+  (ten sam folder co plik HTML). Strona automatycznie je wyświetli.
+  Motyw jest ciemny, więc czarne tło logo wtapia się idealnie.
+
+ Dane firmy są już wstawione (prawdziwe). Gdyby coś zmienić - Ctrl+F:
+  • 784 071 355 → telefony (też linki tel:)
+  • ul. Wincentego Pola 10, 58-500 Jelenia Góra → adres
+  • Pn–Pt 8:00–16:00      → godziny
+  • zdjęcia → podmień placeholdery, gdy będą realne fotki warsztatu
+ ============================================================================
+-->
+
+<title>Mechanik Jelenia Góra - PROFI AUTO SERWIS CARGUM | Naprawy, opony, diagnostyka</title>
+<meta name="description" content="Auto serwis CarGum w Jeleniej Górze: diagnostyka, hamulce, zawieszenie, klimatyzacja, oleje, elektryka, opony i wulkanizacja. Uczciwa wycena przed naprawą, gwarancja. Zadzwoń: 784 071 355." />
+<meta name="theme-color" content="#0a0a0c" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23ff7a00'/><text x='50' y='70' font-size='52' font-family='Arial,sans-serif' font-weight='bold' text-anchor='middle' fill='%23111'>CG</text></svg>" />
+<meta property="og:title" content="PROFI AUTO SERWIS CARGUM - mechanik w Jeleniej Górze" />
+<meta property="og:description" content="Naprawy, diagnostyka, opony. Wycena przed naprawą i gwarancja. Zadzwoń: 784 071 355." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="cargum-logo.png" />
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "AutoRepair",
+ "name": "PROFI AUTO SERWIS CARGUM",
+ "image": "cargum-logo.png",
+ "telephone": "+48784071355",
+ "address": {
+  "@type": "PostalAddress",
+  "streetAddress": "ul. Wincentego Pola 10",
+  "addressLocality": "Jelenia Góra",
+  "postalCode": "58-500",
+  "addressCountry": "PL"
+ },
+ "areaServed": "Jelenia Góra i okolice",
+ "openingHoursSpecification": [
+  { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "16:00" }
+ ],
+ "priceRange": "$$",
+ "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "6" },
+ "review": [
+  { "@type": "Review", "author": { "@type": "Person", "name": "Bogdan Tkachuk" }, "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "reviewBody": "Problem z silnikiem - szybko zdiagnozowali i wykonali kompleksową naprawę. Robert wszystko wyjaśnił. Zdecydowanie warto!" },
+  { "@type": "Review", "author": { "@type": "Person", "name": "Paulina Majewska" }, "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "reviewBody": "Kilku mechaników rozkładało ręce przy klimatyzacji - tylko Cargum znalazł usterkę. Konkretna wycena i szybka naprawa." },
+  { "@type": "Review", "author": { "@type": "Person", "name": "Krzysztof B." }, "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "reviewBody": "Trafne diagnozy, pełen profesjonalizm, jasne ceny i świetna obsługa. Dziękujemy Marcinowi i zespołowi Car-Gum!" },
+  { "@type": "Review", "author": { "@type": "Person", "name": "Edward Maciejewski" }, "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "reviewBody": "Szybka naprawa Twingo, które nie odpalało. Wybrali najtańsze rozwiązanie. Szybko i skutecznie." },
+  { "@type": "Review", "author": { "@type": "Person", "name": "Iwona" }, "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "reviewBody": "Auto zepsuło się tuż przed podróżą. Przyjęli z życzliwością, usterkę szybko zdiagnozowano i naprawiono." },
+  { "@type": "Review", "author": { "@type": "Person", "name": "Tomasz Pużycki" }, "reviewRating": { "@type": "Rating", "ratingValue": "5" }, "reviewBody": "Gorąco polecam! Pan Marcin Kubiak szybko załatwił sprawę i uratował nam wakacje." }
+ ]
+}
+</script>
+
+<style>
+ /* ---- Paleta pod logo: czerń + pomarańcz + biel (sportowo) ---- */
+ :root{
+  --bg:#0a0a0c;
+  --bg-soft:#121216;
+  --card:#16161b;
+  --line:#2a2a31;
+  --ink:#f4f4f5;
+  --muted:#a1a1aa;
+  --accent:#ff7a00;    /* pomarańcz z logo */
+  --accent-2:#ff9a3c;
+  --accent-dark:#e06600;
+  --ok:#22c55e;
+  --radius:14px;
+  --maxw:1100px;
+  --shadow:0 10px 30px rgba(0,0,0,.5);
+ }
+ *{box-sizing:border-box;margin:0;padding:0}
+ html{scroll-behavior:smooth}
+ body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased;
+ }
+ a{color:inherit;text-decoration:none}
+ img{max-width:100%;display:block}
+ .wrap{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+ h1,h2,h3{line-height:1.12;letter-spacing:-.02em}
+ h2{font-size:clamp(1.7rem,4.5vw,2.5rem);margin-bottom:10px;font-weight:900;text-transform:uppercase;font-style:italic}
+ .lead{color:var(--muted);font-size:1.05rem}
+ section{padding:66px 0}
+ /* Kotwice nie chowają się pod przyklejonym nagłówkiem (~70px) */
+ section[id], a[id]{scroll-margin-top:84px}
+ .section-soft{background:var(--bg-soft)}
+ .center{text-align:center}
+ .eyebrow{color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.1em;font-size:.8rem;margin-bottom:10px}
+
+ /* ---- Przyciski ---- */
+ .btn{display:inline-flex;align-items:center;gap:10px;font-weight:800;padding:14px 24px;border-radius:999px;
+  font-size:1.05rem;transition:.15s;border:2px solid transparent;cursor:pointer;text-transform:uppercase;letter-spacing:.02em}
+ .btn svg{width:20px;height:20px}
+ .btn-call{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#111}
+ .btn-call:hover{filter:brightness(1.08);transform:translateY(-1px)}
+ .btn-ghost{background:transparent;color:var(--ink);border-color:#3a3a44}
+ .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+ .btn-dark{background:#fff;color:#111}
+ .btn-dark:hover{filter:brightness(.92)}
+
+ /* ---- Górny pasek ---- */
+ header.top{position:sticky;top:0;z-index:50;background:rgba(10,10,12,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+ .top-in{display:flex;align-items:center;justify-content:space-between;height:70px}
+ .brand{display:flex;align-items:center;gap:12px;font-weight:900;font-size:1.05rem;text-transform:uppercase;letter-spacing:.02em}
+ .brand img{height:40px;width:auto}
+ .brand .fallback{color:var(--accent)}
+ .brand .brandname{color:#fff;font-weight:900;font-size:1.2rem;letter-spacing:.04em}
+ .brand .brandname b{color:var(--accent);font-weight:900}
+ .top nav{display:flex;align-items:center;gap:22px}
+ .top nav a.link{color:var(--ink);font-weight:700;font-size:.95rem;text-transform:uppercase;letter-spacing:.02em}
+ .top nav a.link:hover{color:var(--accent)}
+ /* Rozwijane menu "Usługi" ze strzałką (jak w wersji wielopodstronowej) */
+ .menu{position:relative}
+ .menu>summary{list-style:none;cursor:pointer;color:var(--ink);font-weight:700;font-size:.95rem;text-transform:uppercase;letter-spacing:.02em;display:inline-flex;align-items:center;gap:6px}
+ .menu>summary::-webkit-details-marker{display:none}
+ .menu>summary::after{content:"▾";color:var(--accent);font-size:.85em;transition:transform .15s}
+ .menu[open]>summary::after{transform:rotate(180deg)}
+ .menu>summary:hover,.menu[open]>summary{color:var(--accent)}
+ .menu-panel{position:absolute;top:calc(100% + 16px);right:0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px;min-width:230px;box-shadow:var(--shadow);display:flex;flex-direction:column;z-index:60}
+ .menu-panel a{padding:11px 14px;border-radius:8px;font-weight:600;font-size:.95rem;white-space:nowrap;color:var(--ink)}
+ .menu-panel a:hover{background:rgba(255,122,0,.14);color:var(--accent)}
+ @media(max-width:900px){ .top nav .link{display:none} .brand span.txt{display:none} }
+
+ /* ---- Hero ---- */
+ .hero{position:relative;overflow:hidden;padding:64px 0 60px;
+  background:radial-gradient(900px 400px at 70% -10%, rgba(255,122,0,.22), transparent 60%), #0a0a0c}
+ .hero .logo-big{max-height:220px;margin:0 auto 26px;width:auto}
+ .hero h1{font-size:clamp(1.9rem,5.5vw,3rem);font-weight:900;text-transform:uppercase;font-style:italic}
+ .hero h1 .hl{color:var(--accent)}
+ .hero p.sub{color:#d4d4d8;font-size:1.18rem;margin:16px auto 26px;max-width:640px}
+ .hero .cta-row{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+ .hero .quick{display:flex;flex-wrap:wrap;gap:22px;margin-top:30px;color:#d4d4d8;font-size:.95rem;justify-content:center}
+ .hero .quick div{display:flex;align-items:center;gap:8px}
+ .hero .quick svg{width:18px;height:18px;color:var(--accent)}
+ .trust-strip{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;justify-content:center}
+ .trust-pill{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.04);
+  border:1px solid var(--line);padding:10px 16px;border-radius:12px}
+ .trust-pill b{font-size:1.25rem;color:var(--accent)}
+ .trust-pill span{color:#a1a1aa;font-size:.82rem;line-height:1.2;text-align:left}
+
+ /* ---- Siatki / karty ---- */
+ .grid{display:grid;gap:14px}
+ .grid-3{grid-template-columns:repeat(3,1fr)}
+ .grid-2{grid-template-columns:repeat(2,1fr)}
+ @media(max-width:860px){.grid-3{grid-template-columns:repeat(2,1fr)}}
+ @media(max-width:560px){.grid-3,.grid-2{grid-template-columns:1fr}}
+ /* Kompaktowe kafelki usług: ikona + problem + nazwa (zwarte) */
+ .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:14px 16px;transition:.15s;display:flex;align-items:center;gap:14px}
+ .card:hover{border-color:var(--accent);transform:translateY(-2px)}
+ .card .ico{width:40px;height:40px;border-radius:10px;background:rgba(255,122,0,.14);color:var(--accent);
+  display:grid;place-items:center;flex:none}
+ .card .ico svg{width:22px;height:22px}
+ .card h3{font-size:1rem;margin:0;line-height:1.2}
+ .card .prob{color:var(--accent);font-weight:800;font-size:.78rem;margin-bottom:2px}
+ .badge-spec{display:inline-block;background:var(--accent);color:#111;font-weight:800;font-size:.68rem;
+  text-transform:uppercase;letter-spacing:.04em;padding:3px 8px;border-radius:6px;margin-left:8px;vertical-align:middle}
+
+ /* ---- Kroki ---- */
+ .steps{counter-reset:step;display:grid;gap:18px;grid-template-columns:repeat(4,1fr)}
+ @media(max-width:860px){.steps{grid-template-columns:repeat(2,1fr)}}
+ @media(max-width:480px){.steps{grid-template-columns:1fr}}
+ .step{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 20px 20px}
+ .step::before{counter-increment:step;content:counter(step);position:absolute;top:-16px;left:20px;width:36px;height:36px;
+  border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#111;display:grid;place-items:center;font-weight:900}
+ .step h3{font-size:1.05rem;margin:8px 0 4px}
+ .step p{color:var(--muted);font-size:.92rem}
+
+ /* ---- Dlaczego my ---- */
+ .why{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+ @media(max-width:680px){.why{grid-template-columns:1fr}}
+ .why .item{display:flex;gap:14px;align-items:flex-start}
+ .why .item svg{width:26px;height:26px;color:var(--ok);flex:none;margin-top:2px}
+ .why .item h3{font-size:1.05rem}
+ .why .item p{color:var(--muted);font-size:.95rem}
+
+ /* ---- Zdjęcia (placeholdery) ---- */
+ .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+ @media(max-width:680px){.gallery{grid-template-columns:repeat(2,1fr)}}
+ .photo{aspect-ratio:4/3;border-radius:var(--radius);display:grid;place-items:center;color:#fff;font-weight:700;
+  text-align:center;padding:10px;border:1px solid var(--line);background:linear-gradient(135deg,#1c1c22,#0c0c0e)}
+ .photo.alt{background:linear-gradient(135deg,#7a3b00,#ff7a00);color:#111}
+
+ /* ---- Cennik ---- */
+ .price{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+ @media(max-width:760px){.price{grid-template-columns:1fr}}
+ .price .row{display:flex;justify-content:space-between;align-items:baseline;border:1px solid var(--line);
+  border-radius:var(--radius);padding:16px 18px;background:var(--card)}
+ .price .row b{font-size:1.05rem}
+ .price .row .from{color:var(--accent);font-weight:900;white-space:nowrap}
+ .note{color:var(--muted);font-size:.9rem;margin-top:14px;text-align:center}
+
+ /* ---- Opinie ---- */
+ .reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+ @media(max-width:760px){.reviews{grid-template-columns:1fr}}
+ .review{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin:0}
+ .review .stars{color:var(--accent);font-size:.95rem;letter-spacing:1px}
+ .review blockquote{margin:8px 0;font-style:italic;color:#e4e4e7;font-size:.92rem;line-height:1.5}
+ .review figcaption{font-weight:800;font-size:.88rem;color:var(--accent)}
+ .rating-badge{display:inline-flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);
+  border-radius:999px;padding:10px 20px;box-shadow:var(--shadow);font-weight:800}
+ .rating-badge .big{font-size:1.6rem;color:var(--accent)}
+
+ /* ---- FAQ ---- */
+ .faq details{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:0 20px;margin-bottom:12px}
+ .faq summary{list-style:none;cursor:pointer;padding:18px 0;font-weight:800;display:flex;justify-content:space-between;align-items:center}
+ .faq summary::-webkit-details-marker{display:none}
+ .faq summary::after{content:"+";font-size:1.5rem;color:var(--accent);font-weight:400}
+ .faq details[open] summary::after{content:"–"}
+ .faq details p{padding:0 0 18px;color:var(--muted)}
+
+ /* ---- Kontakt ---- */
+ .contact{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+ @media(max-width:760px){.contact{grid-template-columns:1fr}}
+ .info-line{display:flex;gap:12px;align-items:flex-start;margin-bottom:16px}
+ .info-line svg{width:22px;height:22px;color:var(--accent);flex:none;margin-top:2px}
+ .info-line b{display:block}
+ .info-line span,.info-line a.sub{color:var(--muted)}
+ form .field{margin-bottom:14px}
+ form label{display:block;font-weight:700;font-size:.9rem;margin-bottom:6px}
+ form input,form textarea{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:11px;font:inherit;background:#0e0e11;color:var(--ink)}
+ form input::placeholder,form textarea::placeholder{color:#6b7280}
+ form input:focus,form textarea:focus{outline:2px solid var(--accent);border-color:transparent}
+ .map{width:100%;height:300px;border:0;border-radius:var(--radius);margin-top:18px;filter:grayscale(.2)}
+
+ /* ---- Rozwijany blok SEO (zwinięty, ale treść indeksowana) ---- */
+ .seo-details{border:1px solid var(--line);border-radius:var(--radius);background:var(--card);padding:0 18px;max-width:900px;margin:0 auto}
+ .seo-details summary{list-style:none;cursor:pointer;padding:16px 0;font-weight:700;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:10px}
+ .seo-details summary::-webkit-details-marker{display:none}
+ .seo-details summary::after{content:"▾";color:var(--accent);transition:transform .15s}
+ .seo-details[open] summary::after{transform:rotate(180deg)}
+ .seo-body{padding:0 0 16px;color:var(--muted);font-size:.95rem}
+ .seo-body ul{margin:10px 0;padding-left:18px;columns:2}
+ @media(max-width:560px){.seo-body ul{columns:1}}
+ .seo-body li{margin:4px 0}
+
+ /* ---- Pas CTA (końcowy) ---- */
+ .cta-band{background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#111;text-align:center;padding:48px 0}
+ .cta-band h2{color:#111;margin-bottom:8px}
+ .cta-band p{font-weight:600;margin-bottom:20px}
+ .cta-band .btn-dark{background:#111;color:#fff}
+
+ /* ---- Stopka ---- */
+ footer{background:#070708;color:#a1a1aa;padding:40px 0 110px;font-size:.92rem;border-top:1px solid var(--line)}
+ footer .cols{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between}
+ footer a:hover{color:var(--accent)}
+ footer h4{color:#fff;margin-bottom:10px}
+
+ /* ---- Mobilny pasek „Zadzwoń” ---- */
+ .callbar{position:fixed;bottom:0;left:0;right:0;z-index:60;display:none;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 -4px 16px rgba(0,0,0,.4)}
+ .callbar a{display:flex;align-items:center;justify-content:center;gap:10px;color:#111;font-weight:900;padding:16px;font-size:1.1rem;text-transform:uppercase}
+ .callbar svg{width:22px;height:22px}
+ @media(max-width:900px){ .callbar{display:block} }
+</style>
+</head>
+
+<body>
+
+<!-- ============ GÓRNY PASEK ============ -->
+<header class="top">
+ <div class="wrap top-in">
+  <a href="#top" class="brand">
+   <!-- Zapisz logo jako cargum-logo.png obok tego pliku -->
+   <img src="cargum-logo.png" alt="CarGum" onerror="this.style.display='none'">
+   <span class="brandname">Car<b>Gum</b></span>
+  </a>
+  <nav>
+   <details class="menu">
+    <summary>Usługi</summary>
+    <div class="menu-panel">
+     <a href="#uslugi">Opony i wulkanizacja</a>
+     <a href="#uslugi">Diagnostyka</a>
+     <a href="#uslugi">Hamulce</a>
+     <a href="#uslugi">Zawieszenie</a>
+     <a href="#uslugi">Klimatyzacja</a>
+     <a href="#uslugi">Serwis olejowy</a>
+    </div>
+   </details>
+   <a class="link" href="#o-nas">O nas</a>
+   <a class="link" href="#opinie">Opinie</a>
+   <a class="link" href="#kontakt">Kontakt</a>
+   <a class="btn btn-call" href="tel:+48784071355">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    784 071 355
+   </a>
+  </nav>
+ </div>
+</header>
+
+<a id="top"></a>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+ <div class="wrap center">
+  <div class="eyebrow">Auto serwis • Jelenia Góra i okolice</div>
+  <h1>Twoje auto w <span class="hl">dobrych rękach</span></h1>
+  <p class="sub">Diagnostyka, hamulce, zawieszenie, klimatyzacja, oleje, elektryka oraz opony i wulkanizacja.
+    Wycenę poznasz <b>przed</b> naprawą. Zadzwoń i umów termin.</p>
+  <div class="cta-row">
+   <a class="btn btn-call" href="tel:+48784071355">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Zadzwoń: 784 071 355
+   </a>
+   <a class="btn btn-ghost" href="#kontakt">Umów wizytę →</a>
+  </div>
+
+  <div class="quick">
+   <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> pon–pt 8:00–16:00</div>
+   <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> ul. Wincentego Pola 10, Jelenia Góra</div>
+   <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> wszystkie marki aut</div>
+  </div>
+
+  <div class="trust-strip">
+   <div class="trust-pill"><b>✔</b><span>Wszystkie<br>marki aut</span></div>
+   <div class="trust-pill"><b>✔</b><span>Opony i<br>wulkanizacja</span></div>
+   <div class="trust-pill"><b>✔</b><span>Wycena<br>przed naprawą</span></div>
+   <div class="trust-pill"><b>✔</b><span>Gwarancja<br>na usługi</span></div>
+  </div>
+ </div>
+</section>
+
+<!-- ============ USŁUGI = PROBLEMY KLIENTA ============ -->
+<section id="uslugi">
+ <div class="wrap">
+  <div class="center" style="margin-bottom:36px">
+   <div class="eyebrow">W czym pomożemy</div>
+   <h2>Masz taki problem? Zajmiemy się tym.</h2>
+   <p class="lead">Opisz objaw - resztę bierzemy na siebie.</p>
+  </div>
+  <div class="grid grid-3">
+
+   <div class="card">
+    <!-- kontrolka ciśnienia w oponach (TPMS) -->
+    <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 14V10a7 7 0 0 1 14 0v4"/><path d="M4 14l1.6 1.6L7.2 14l1.6 1.6L10.4 14l1.6 1.6L13.6 14l1.6 1.6L16.8 14l1.6 1.6L20 14"/><path d="M12 8.5v2.6M12 13h.01"/></svg></div>
+    <div class="card-txt"><div class="prob">„Zużyte / sezonowa wymiana”</div><h3>Opony i wulkanizacja <span class="badge-spec">Specjalizacja</span></h3></div>
+   </div>
+
+   <div class="card">
+    <!-- kontrolka check engine (sylwetka silnika) -->
+    <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 9h2V7h5v2h2l3 3h2v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1v-3H3v-3h2z"/><path d="M9 7V5h4"/></svg></div>
+    <div class="card-txt"><div class="prob">„Świeci check engine”</div><h3>Diagnostyka komputerowa</h3></div>
+   </div>
+
+   <div class="card">
+    <!-- kontrolka hamulca: okrąg z ! w nawiasach -->
+    <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 9.8v2.4M12 14.2h.01"/><path d="M5.5 7.5a8 8 0 0 0 0 9"/><path d="M18.5 7.5a8 8 0 0 1 0 9"/></svg></div>
+    <div class="card-txt"><div class="prob">„Piszczą / słabo trzymają hamulce”</div><h3>Układ hamulcowy</h3></div>
+   </div>
+
+   <div class="card">
+    <!-- amortyzator / sprężyna (zawieszenie) -->
+    <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h8M8 20h8"/><path d="M9 4 15 8 9 12 15 16 9 20"/></svg></div>
+    <div class="card-txt"><div class="prob">„Stuka / buja na nierównościach”</div><h3>Zawieszenie</h3></div>
+   </div>
+
+   <div class="card">
+    <!-- śnieżynka (klimatyzacja) -->
+    <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M3.7 7.2 20.3 16.8"/><path d="M20.3 7.2 3.7 16.8"/><path d="M9.2 4.1 12 5.7l2.8-1.6M9.2 19.9 12 18.3l2.8 1.6M4.2 10.6 7 12l-2.8 1.4M19.8 10.6 17 12l2.8 1.4"/></svg></div>
+    <div class="card-txt"><div class="prob">„Klima nie chłodzi / brzydko pachnie”</div><h3>Klimatyzacja</h3></div>
+   </div>
+
+   <div class="card">
+    <!-- kontrolka ciśnienia oleju (lampka z kroplą) -->
+    <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 15h6l2-2h5l4 3v1a1 1 0 0 1-1 1H6z"/><path d="M9 13v-2h3"/><path d="M20 10.5c0 1.1-1 1.9-1 1.9s-1-.8-1-1.9a1 1 0 0 1 2 0z"/></svg></div>
+    <div class="card-txt"><div class="prob">„Czas na przegląd / wymianę oleju”</div><h3>Serwis olejowy i przeglądy</h3></div>
+   </div>
+
+  </div>
+ </div>
+</section>
+
+<!-- ============ JAK PRACUJEMY ============ -->
+<section class="section-soft">
+ <div class="wrap">
+  <div class="center" style="margin-bottom:42px">
+   <div class="eyebrow">Prosto i bez stresu</div>
+   <h2>Jak to działa</h2>
+  </div>
+  <div class="steps">
+   <div class="step"><h3>1. Zadzwoń lub napisz</h3><p>Mówisz, co się dzieje. Umawiamy dogodny termin.</p></div>
+   <div class="step"><h3>2. Diagnoza</h3><p>Sprawdzamy auto i ustalamy przyczynę usterki.</p></div>
+   <div class="step"><h3>3. Wycena przed naprawą</h3><p>Znasz koszt i zakres, zanim cokolwiek zrobimy. Bez niespodzianek.</p></div>
+   <div class="step"><h3>4. Naprawa z gwarancją</h3><p>Naprawiamy, oddajemy sprawne auto i dajemy gwarancję.</p></div>
+  </div>
+ </div>
+</section>
+
+<!-- ============ DLACZEGO MY ============ -->
+<section id="o-nas">
+ <div class="wrap">
+  <div class="center" style="max-width:720px;margin:0 auto 36px">
+   <div class="eyebrow">O warsztacie</div>
+   <h2>CarGum - mechanik, któremu zaufasz</h2>
+   <p class="lead">PROFI AUTO SERWIS CARGUM prowadzi <b>Marcin Kubiak</b>.
+     Naprawiamy auta mieszkańców Jeleniej Góry i okolic - tłumaczymy po ludzku, wyceniamy uczciwie
+     i robimy tak, żebyś wracał. Do tego sprzedaż i serwis opon w jednym miejscu.</p>
+  </div>
+  <div class="why">
+   <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><div><h3>Wycena przed naprawą</h3><p>Zero ukrytych kosztów - akceptujesz, zanim zaczniemy.</p></div></div>
+   <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><div><h3>Gwarancja na usługi</h3><p>Odpowiadamy za wykonaną pracę i montowane części.</p></div></div>
+   <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><div><h3>Wszystkie marki</h3><p>Osobowe i dostawcze: benzyna, diesel, LPG, hybrydy.</p></div></div>
+   <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg><div><h3>Naprawy + opony</h3><p>Mechanika i pełny serwis opon bez jeżdżenia po mieście.</p></div></div>
+  </div>
+ </div>
+</section>
+
+<!-- ============ CTA TELEFON ============ -->
+<section class="section-soft" style="padding:40px 0">
+ <div class="wrap center">
+  <a class="btn btn-call" href="tel:+48784071355">Zadzwoń: 784 071 355</a>
+ </div>
+</section>
+
+<!-- ============ OPINIE ============ -->
+<section id="opinie">
+ <div class="wrap">
+  <div class="center" style="margin-bottom:26px">
+   <div class="eyebrow">Opinie klientów</div>
+   <h2>Kierowcy z Jeleniej Góry nam ufają</h2>
+   <p class="lead">Ocena 5,0 ★ z opinii w Google</p>
+  </div>
+  <!-- Prawdziwe opinie z wizytówki Google (5★) -->
+  <div class="reviews">
+   <figure class="review"><div class="stars">★★★★★</div><blockquote>„Miałem problem z silnikiem. Szybko zdiagnozowali i wykonali kompleksową naprawę. Robert wszystko wyjaśnił. Zdecydowanie warto!”</blockquote><figcaption>Bogdan Tkachuk</figcaption></figure>
+   <figure class="review"><div class="stars">★★★★★</div><blockquote>„Kilku mechaników rozkładało ręce przy mojej klimatyzacji - tylko Cargum i Robert znaleźli usterkę i wszystko wyjaśnili. Konkretna wycena i szybka naprawa.”</blockquote><figcaption>Paulina Majewska</figcaption></figure>
+   <figure class="review"><div class="stars">★★★★★</div><blockquote>„Trafne diagnozy, pełen profesjonalizm, jasne ceny i świetna obsługa. Nasza Corsa dostała nowe życie. Dziękujemy Marcinowi i zespołowi Car-Gum!”</blockquote><figcaption>Krzysztof B.</figcaption></figure>
+   <figure class="review"><div class="stars">★★★★★</div><blockquote>„Szybka naprawa Twingo, które nie odpalało. Wybrali najtańsze rozwiązanie. Szybko i skutecznie - auto odzyskało moc.”</blockquote><figcaption>Edward Maciejewski</figcaption></figure>
+   <figure class="review"><div class="stars">★★★★★</div><blockquote>„Auto zepsuło się tuż przed ważną podróżą. Przyjęli je z życzliwością, usterkę szybko zdiagnozowano i naprawiono. Ogromny szacunek i podziękowania!”</blockquote><figcaption>Iwona</figcaption></figure>
+   <figure class="review"><div class="stars">★★★★★</div><blockquote>„Gorąco polecam! Pan Marcin Kubiak szybko załatwił sprawę i uratował nam wakacje :)”</blockquote><figcaption>Tomasz Pużycki</figcaption></figure>
+  </div>
+ </div>
+</section>
+
+<!-- ============ KONTAKT ============ -->
+<section id="kontakt">
+ <div class="wrap">
+  <div class="center" style="margin-bottom:36px">
+   <div class="eyebrow">Umów wizytę</div>
+   <h2>Zadzwoń i umów wizytę</h2>
+   <p class="lead">Najszybciej załatwisz sprawę telefonicznie - oddzwonimy, jeśli nie odbierzemy.</p>
+  </div>
+  <div class="contact">
+   <div>
+    <div class="info-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><div><b>Telefon</b><a href="tel:+48784071355" class="sub" style="color:var(--accent);font-weight:800;display:block;font-size:1.3rem">784 071 355</a></div></div>
+    <div class="info-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><b>Adres</b><span>ul. Wincentego Pola 10, 58-500 Jelenia Góra</span></div></div>
+    <div class="info-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Godziny</b><span>pon–pt 8:00–16:00 · sobota i niedziela nieczynne</span></div></div>
+    <a class="btn btn-call" href="tel:+48784071355" style="margin-top:8px">Zadzwoń: 784 071 355</a>
+   </div>
+   <div>
+    <iframe class="map" style="height:100%;min-height:300px" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+     src="https://www.google.com/maps?q=ul.+Wincentego+Pola+10,+Jelenia+G%C3%B3ra&output=embed" title="Mapa dojazdu - CarGum Jelenia Góra"></iframe>
+   </div>
+  </div>
+ </div>
+</section>
+
+<!-- ============ PAS CTA (KOŃCOWY) ============ -->
+<section class="cta-band">
+ <div class="wrap">
+  <h2>Coś nie tak z autem? Nie czekaj.</h2>
+  <p>Zadzwoń - doradzimy i umówimy termin.</p>
+  <a class="btn btn-dark" href="tel:+48784071355">Zadzwoń: 784 071 355</a>
+ </div>
+</section>
+
+<!-- ============ STOPKA ============ -->
+<footer>
+ <div class="wrap cols">
+  <div style="max-width:300px">
+   <h4>PROFI AUTO SERWIS CARGUM</h4>
+   <p>Mechanik samochodowy i serwis opon w Jeleniej Górze. Naprawy, diagnostyka, opony - uczciwie i z gwarancją. Właściciel: Marcin Kubiak.</p>
+  </div>
+  <div>
+   <h4>Usługi</h4>
+   <p><a href="#uslugi">Opony i wulkanizacja</a><br><a href="#uslugi">Diagnostyka</a><br><a href="#uslugi">Hamulce</a><br><a href="#uslugi">Zawieszenie</a><br><a href="#uslugi">Klimatyzacja</a><br><a href="#uslugi">Serwis olejowy</a></p>
+  </div>
+  <div>
+   <h4>Kontakt</h4>
+   <p><a href="tel:+48784071355">784 071 355</a><br>ul. Wincentego Pola 10<br>58-500 Jelenia Góra<br>pon–pt 8:00–16:00</p>
+  </div>
+ </div>
+ <div class="wrap" style="margin-top:24px;opacity:.6;font-size:.85rem">© 2026 PROFI AUTO SERWIS CARGUM - Marcin Kubiak. Wszelkie prawa zastrzeżone.</div>
+</footer>
+
+<!-- ============ MOBILNY PASEK „ZADZWOŃ” ============ -->
+<div class="callbar">
+ <a href="tel:+48784071355">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  Zadzwoń: 784 071 355
+ </a>
+</div>
+
+</body>
+</html>
